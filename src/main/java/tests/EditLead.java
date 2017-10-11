@@ -1,16 +1,14 @@
 package tests;
 
-
 import org.testng.annotations.Test;
+
 import wrapper.GenericWrappers;
 
-public class Login extends GenericWrappers{
+public class EditLead extends GenericWrappers{
 
-	//@Test(invocationCount=2)
-	//@Test(timeOut=5000)
-	@Test(groups="sanity",dependsOnGroups="smoke")
-	public void loginLogout()   {
-		
+	// packagename.classname.methodname
+	@Test(groups="regression")
+	public void editLead()   {
 		
 		// launch browser
 		invokeApp("chrome", "http://leaftaps.com/opentaps");
@@ -25,13 +23,7 @@ public class Login extends GenericWrappers{
 
 		//Click on Login Button
 		clickByClassName("decorativeSubmit");
-		
-		//Click on LogOut Button
-		clickByClassName("decorativeSubmit");
-		
-		// Close browser
 		closeBrowser();
-		
 		
 	
 		

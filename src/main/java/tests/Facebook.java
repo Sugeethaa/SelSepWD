@@ -4,27 +4,28 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import wrapper.GenericWrappers;
 
-public class Facebook {
+public class Facebook extends GenericWrappers {
 
-	public static void main(String[] args) throws InterruptedException {
+	@Test(groups="regression")
+	public void facebook() throws InterruptedException {
 		
-		GenericWrappers wr = new GenericWrappers();
-		wr.invokeApp("chrome", "https://www.facebook.com/");
+		invokeApp("chrome", "https://www.facebook.com/");
 		
 		//Enter the UserName
-		wr.enterById("email", "babu");
+		enterById("email", "babu");
 		
 		//Enter the Password
-		wr.enterById("pass", "crmsfa");
+		enterById("pass", "crmsfa");
 
 		//Click on Login Button
-		wr.clickByXpath("//input[@value='Log In']");
+		clickByXpath("//input[@value='Log In']");
 		
 		// Close browser
-		wr.closeBrowser();
+		closeBrowser();
 		
 		
 	
